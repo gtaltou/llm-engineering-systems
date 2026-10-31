@@ -7,7 +7,7 @@ End-to-end LLM Engineering portfolio featuring 8 production-grade applications c
 
 | # | Project | Core Technologies | Status |
 | :--- | :--- | :--- | :--- |
-| 01 | **Smart Brochure Generator** | OpenAI/Anthropic APIs, BeautifulSoup, Structured Outputs (Pydantic), Streaming | 🚧 In Progress |
+| 01 | **Smart Brochure Generator** | OpenAI/Anthropic APIs, BeautifulSoup, Structured Outputs (Pydantic), Streaming | ✅ Completed |
 | 02 | **Multimodal Customer Support Assistant** | Gradio, Whisper (Audio), Vision, Tool Calling | ⏳ Planned |
 | 03 | **High-Performance Code Transpiler** | Hugging Face, vLLM, Quantization (AWQ/GGUF), Python -> C++ | ⏳ Planned |
 | 04 | **Enterprise Knowledge Worker (RAG)** | LangChain/LlamaIndex, ChromaDB, Hybrid Search, Reranking | ⏳ Planned |
