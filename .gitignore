@@ -1,0 +1,23 @@
+# Environnements virtuels & Python
+.venv/
+__pycache__/
+*.py[cod]
+*.so
+
+# Variables d'environnement & Secrets (CRITIQUE)
+.env
+.env.*
+!.env.example
+
+# Données locales, caches & Vector DBs
+data/
+chroma_db/
+*.sqlite3
+*.db
+huggingface_cache/
+wandb/
+
+# OS & IDE
+.DS_Store
+.vscode/
+.idea/
