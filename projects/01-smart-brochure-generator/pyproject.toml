@@ -1,0 +1,98 @@
+[project]
+name = "smart-brochure-generator"
+version = "0.1.0"
+description = "Production-grade AI brochure generator using Structured Outputs, Prompt Engineering, and modern LLM engineering practices."
+readme = "README.md"
+authors = [
+    { name = "Guy Taltou", email = "guy.taltou@gmail.com" }
+]
+requires-python = ">=3.12"
+
+dependencies = [
+    "anthropic>=2.3.0",
+    "beautifulsoup4>=4.15.0",
+    "fastapi>=0.163.1",
+    "httpx>=0.28.1",
+    "jinja2>=3.1.6",
+    "langfuse>=5.2.0",
+    "openai>=3.42.0",
+    "pydantic>=2.14.2",
+    "pydantic-settings>=2.16.3",
+    "python-dotenv>=1.2.4",
+    "python-multipart>=0.0.33",
+    "pyyaml>=6.0.3",
+    "requests>=2.34.2",
+    "rich>=15.0.0",
+    "uvicorn>=0.54.0",
+]
+[tool.uv]
+package = false
+[build-system]
+requires = ["uv_build>=0.12.23,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "mypy>=1.18.2",
+    "pytest>=9.0.0",
+    "pytest-asyncio>=1.2.0",
+    "pytest-cov>=7.0.0",
+    "ruff>=0.13.0",
+]
+
+# ==================================================
+# Ruff
+# ==================================================
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+[tool.ruff.lint]
+select = [
+    "E",
+    "F",
+    "I",
+    "B",
+    "UP",
+]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+# ==================================================
+# MyPy
+# ==================================================
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+
+warn_unused_configs = true
+warn_return_any = true
+warn_unused_ignores = true
+
+disallow_untyped_defs = true
+disallow_any_generics = true
+
+# ==================================================
+# Pytest
+# ==================================================
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+
+# ==================================================
+# Coverage
+# ==================================================
+
+[tool.coverage.run]
+source = ["src"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false
+fail_under = 90
