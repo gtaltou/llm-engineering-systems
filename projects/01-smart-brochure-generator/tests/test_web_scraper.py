@@ -28,7 +28,5 @@ def test_clean_html() -> None:
     title, content = scraper.clean_html(html)
 
     assert title == "Acme Corp"
-
     assert "Acme develops innovative AI products." in content
-
     assert "Menu" not in content
