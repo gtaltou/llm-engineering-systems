@@ -6,6 +6,7 @@ on:
       - main
       - develop
     paths:
+      - ".github/workflows/**"
       - "projects/01-smart-brochure-generator/**"
 
   pull_request:
@@ -13,6 +14,7 @@ on:
       - main
       - develop
     paths:
+      - ".github/workflows/**"
       - "projects/01-smart-brochure-generator/**"
 
 permissions:
