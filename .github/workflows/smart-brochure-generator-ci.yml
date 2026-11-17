@@ -45,11 +45,11 @@ jobs:
       - name: Sync Dependencies
         run: uv sync
 
-      - name: Ruff Lint
-        run: uv run ruff check .
-
       - name: Ruff Format Check
         run: uv run ruff format --check .
+
+      - name: Ruff Lint
+        run: uv run ruff check .
 
       - name: MyPy
         run: uv run mypy .
@@ -57,21 +57,8 @@ jobs:
       - name: Pytest + Coverage
         run: uv run pytest -m "not integration" --cov=src --cov-report=xml --cov-report=term-missing --cov-fail-under=90
 
-      - name: Generate Coverage Badge
-        run: |
-          uv pip install genbadge[coverage]
-          genbadge coverage \
-            -i coverage.xml \
-            -o coverage.svg
-
-      - name: Upload Coverage Badge
-        uses: actions/upload-artifact@v4
-        with:
-          name: coverage-badge
-          path: coverage.svg
       - name: Upload Coverage Report
         uses: actions/upload-artifact@v4
         with:
           name: smart-brochure-generator-coverage
           path: projects/01-smart-brochure-generator/coverage.xml
-
