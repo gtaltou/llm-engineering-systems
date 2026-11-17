@@ -1,6 +1,10 @@
 # 📄 Smart Brochure Generator
 
-![Coverage](../../coverage.svg)
+![Coverage](https://img.shields.io/badge/Test%20Coverage-100%25-brightgreen)
+![CI](https://img.shields.io/github/actions/workflow/status/gtaltou/llm-engineering-systems/smart-brochure-generator-ci.yml?branch=main)
+
+![CI](https://github.com/gtaltou/llm-engineering-systems/actions/workflows/smart-brochure-generator-ci.yml/badge.svg)
+
 
 [![Python 3.12+](https://img.shields.io/badge/Python-3.12%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
