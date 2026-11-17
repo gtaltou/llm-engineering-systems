@@ -1,3 +1,5 @@
+from unittest.mock import Mock, patch
+
 from src.retrieval.web_scraper import WebsiteScraper
 
 
@@ -30,11 +32,6 @@ def test_clean_html() -> None:
     assert title == "Acme Corp"
     assert "Acme develops innovative AI products." in content
     assert "Menu" not in content
-    
-from unittest.mock import Mock
-from unittest.mock import patch
-
-from src.retrieval.web_scraper import WebsiteScraper
 
 
 @patch("src.retrieval.web_scraper.requests.get")
@@ -53,8 +50,9 @@ def test_fetch_html(mock_get: Mock) -> None:
 
     assert html == "<html></html>"
 
-    mock_get.assert_called_once()  
-    
+    mock_get.assert_called_once()
+
+
 @patch.object(
     WebsiteScraper,
     "fetch_html",
@@ -77,9 +75,7 @@ def test_extract(
 
     scraper = WebsiteScraper()
 
-    result = scraper.extract(
-        "https://example.com"
-    )
+    result = scraper.extract("https://example.com")
 
     assert result.url == "https://example.com"
 
