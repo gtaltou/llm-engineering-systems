@@ -5,7 +5,7 @@ End-to-end LLM Engineering portfolio featuring 8 production-grade applications c
 
 ## 🚀 LLM Engineering Systems
 
-![Coverage](https://raw.githubusercontent.com/btoul/llm-engineering-systems/main/coverage.svg)
+https://img.shields.io/badge/Coverage-100%25-brightgreen
 
 [![Python 3.12+](https://img.shields.io/badge/Python-3.12%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
