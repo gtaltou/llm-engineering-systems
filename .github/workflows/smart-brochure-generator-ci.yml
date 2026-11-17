@@ -1,42 +1,47 @@
-name: CI
+name: Smart Brochure Generator CI
 
 on:
   push:
     branches:
       - main
       - develop
+    paths:
+      - "projects/01-smart-brochure-generator/**"
 
   pull_request:
     branches:
       - main
       - develop
+    paths:
+      - "projects/01-smart-brochure-generator/**"
 
 permissions:
   contents: read
 
 jobs:
   quality:
+    name: Quality Checks
 
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        python-version: ["3.12"]
+    defaults:
+      run:
+        working-directory: projects/01-smart-brochure-generator
 
     steps:
-      - name: Checkout repository
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
       - name: Install uv
         uses: astral-sh/setup-uv@v3
 
-      - name: Set up Python
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: "3.12"
 
-      - name: Sync dependencies
-        run: uv sync --all-extras --dev
+      - name: Sync Dependencies
+        run: uv sync
 
       - name: Ruff Lint
         run: uv run ruff check .
@@ -49,14 +54,14 @@ jobs:
 
       - name: Pytest
         run: |
-          uv run pytest \
-            --cov=src \
-            --cov-report=xml \
-            --cov-report=term-missing \
+          uv run pytest `
+            --cov=src `
+            --cov-report=xml `
+            --cov-report=term-missing `
             --cov-fail-under=90
 
       - name: Upload Coverage Report
         uses: actions/upload-artifact@v4
         with:
-          name: coverage-report
-          path: coverage.xml
+          name: smart-brochure-generator-coverage
+          path: projects/01-smart-brochure-generator/coverage.xml

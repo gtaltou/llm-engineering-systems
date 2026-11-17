@@ -1,0 +1,53 @@
+name: Smart Brochure Generator LLM Evaluation
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: "0 2 * * 1"
+
+permissions:
+  contents: read
+
+jobs:
+  evaluation:
+    name: LLM Evaluation
+
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: projects/01-smart-brochure-generator
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Sync Dependencies
+        run: uv sync
+
+      - name: Verify Evaluation Assets
+        run: |
+          test -f evals/evaluate.py
+          test -f evals/golden_dataset.json
+
+      - name: Run Evaluation
+        run: |
+          echo "Evaluation pipeline placeholder"
+          uv run python evals/evaluate.py
+
+      - name: Upload Evaluation Results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: smart-brochure-generator-evaluation
+          path: |
+            projects/01-smart-brochure-generator/evals
