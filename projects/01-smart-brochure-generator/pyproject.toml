@@ -85,6 +85,10 @@ testpaths = ["tests"]
 asyncio_mode = "auto"
 asyncio_default_fixture_loop_scope = "function"
 
+markers = [
+    "integration: real external integration tests",
+]
+
 # ==================================================
 # Coverage
 # ==================================================
@@ -96,3 +100,4 @@ source = ["src"]
 show_missing = true
 skip_covered = false
 fail_under = 90
+
