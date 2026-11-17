@@ -1,4 +1,3 @@
-@'
 # LLM Engineering Systems
 
 End-to-end LLM Engineering portfolio featuring 8 production-grade applications covering Multimodal APIs, Structured Outputs, Hybrid RAG pipelines, Open-Source Quantization (Hugging Face), and QLoRA Fine-Tuning.
