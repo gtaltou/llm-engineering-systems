@@ -314,3 +314,19 @@ mypy .
 ## ⚙️ Quality Gates
 
 A pull
+
+## Roadmap
+
+### Foundation
+
+- [x] Blueprint Architecture
+- [x] FastAPI Setup
+- [x] Type-Safe Configuration
+- [x] Testing Foundation
+
+### Core Features
+
+- [x] Website Scraper
+- [ ] Content Extraction
+- [ ] Prompt Management
+- [ ] Structured Outputs
