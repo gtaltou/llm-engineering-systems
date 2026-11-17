@@ -25,3 +25,9 @@ check: lint typecheck test
 
 docker:
 	docker compose up --build
+
+quality:
+	uv run ruff format .
+	uv run ruff check .
+	uv run mypy .
+	uv run pytest --cov=src --cov-report=term-missing
