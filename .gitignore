@@ -21,3 +21,10 @@ wandb/
 .DS_Store
 .vscode/
 .idea/
+
+.coverage
+coverage.xml
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
